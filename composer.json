@@ -1,0 +1,16 @@
+{
+    "name": "forepoint/wp-component-controller",
+    "description": "Controller component for WordPress",
+    "authors": [
+        {
+            "name": "Forepoint Ltd",
+            "email": "webteam@forepoint.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Forepoint\\WordPress\\Components\\Controller\\": "src/Forepoint/WordPress/Components/Controller/"
+        }
+    }
+
+}
