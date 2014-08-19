@@ -13,7 +13,7 @@ $pimple["pageController"] = function ($c) {
 - You have to implement the indexAction method, which takes a $request object, this is a Symfony 2Request component object.
 
 ```
-class PageController extends AbstractController{
+class PageController extends AbstractController {
 
     public function indexAction($request)
     {
@@ -28,7 +28,7 @@ class PageController extends AbstractController{
 You can also extend the AbstractTimberController which adds the render method that uses Timber/Twig to render the given template with the context.
 
 ```
-class PageController extends AbstractController{
+class PageController extends AbstractTimberController {
 
     public function indexAction($request)
     {
