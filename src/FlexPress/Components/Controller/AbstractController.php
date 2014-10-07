@@ -2,6 +2,8 @@
 
 namespace FlexPress\Components\Controller;
 
+use Symfony\Component\Yaml\Exception\RuntimeException;
+
 abstract class AbstractController
 {
 
@@ -12,6 +14,13 @@ abstract class AbstractController
 
     public function __construct($dic)
     {
+        if (!isset($dic) || !is_a($dic, 'Pimple')) {
+
+            $message = "You did not provide a valid DIC, please provided a DIC in the form of a Pimple based class.";
+            throw new RuntimeException($message);
+
+        }
+
         $this->dic = $dic;
     }
 

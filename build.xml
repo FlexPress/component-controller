@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project name="flexpress-component-controller" default="build" basedir="."
+         description="Config for FlexPress Controller Component">
+
+    <includepath classpath="${application.startdir}/vendor/"/>
+
+    <target name="test">
+        <phpunit haltonerror="true" printsummary="true" haltonfailure="true" bootstrap="${application.startdir}/vendor/autoload.php">
+            <batchtest>
+                <fileset dir="tests">
+                    <include name="**/*.php"/>
+                </fileset>
+            </batchtest>
+        </phpunit>
+    </target>
+
+    <target name="lint">
+        <phplint haltonfailure="true">
+            <fileset dir="src">
+                <include name="**/*.php"/>
+            </fileset>
+        </phplint>
+    </target>
+
+    <target name="codesniff">
+        <phpcodesniffer
+                haltonerror="true"
+                haltonwarning="true"
+                standard="PSR2"
+                verbosity="1"
+                >
+            <fileset dir="src">
+                <include name="**/*.php" />
+            </fileset>
+        </phpcodesniffer>
+    </target>
+
+    <target name="build" depends="lint, codesniff, test">
+        <zip destfile="flexpress-component-controller.zip" basedir="src"/>
+    </target>
+
+</project>
