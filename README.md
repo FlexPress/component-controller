@@ -1,5 +1,7 @@
 # FlexPress controller component
 
+[![Build Status](https://travis-ci.org/FlexPress/component-controller.svg?branch=master)](https://travis-ci.org/FlexPress/component-controller)
+
 ## Install with Pimple
 - This example creates a page controller, you must pass it the DIC.
 ```
